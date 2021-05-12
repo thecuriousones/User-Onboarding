@@ -14,52 +14,48 @@ export default function UserForm(props) {
         submit()
     }
 
-    const onChange = event => {
-        const {name, value, checked, type} = event.target
-        const inputValue = type === 'checkbox' ? checked : value
-        change(name, inputValue)
+    const onChange = (event) => {
+        const { name, value, checked, type } = event.target;
+        const inputValue = type === "checkbox" ? checked : value;
+        change(name, inputValue);
     }
 
     return (
         <form className ='form container' onSubmit={onSubmit}>
             <div>
-                <h4>Create Account:</h4>
+                <h3 className='h4'>Create Account:</h3>
 
                 {/* /// TEXT INPUTS /// */}
+              <div className='labels'>
                 <label>Name&nbsp; 
-                    <input
-                        type='text'
-                        value={values.name}
-                        onChange={onChange}
-                        name='Name'
-                    />    
+                    <input value={values.name} onChange={onChange} name="name" type="text"/>  
                 </label><br/> <br/>
 
                 <label>Email&nbsp;
-                    <input 
-                        type='text'
-                        value={values.email}
-                        onChange={onChange}
-                        name='email'
-                    />
+                    <input value={values.email} onChange={onChange} name="email" type="text"/>
                 </label><br/> <br/>
 
                 <label>Password&nbsp;
-                    <input 
-                        type='text'
-                        value={values.password}
-                        onChange={onChange}
-                        name='password'
-                    />
+                    <input value={values.password} onChange={onChange} name="password" type="text"/>
                 </label><br/> <br/>
+              </div>
             </div>
                 <h4>Please Select Checkbox</h4>
 
                 {/* // CHECKBOX // */}
-                
-            <div>
+                <label>Terms of Sevice
+                    <input value={values.terms} onChange={onChange} name="checkbox" type="checkbox"/>
+                </label><br/> 
 
-            </div>
+            <div className="form-group submit">
+                <button disabled={disabled}>SUBMIT</button>   
+
+                <div className="errors">
+                    <div>{errors.name}</div>
+                    <div>{errors.email}</div>
+                    <div>{errors.password}</div>
+                </div> 
+            </div> 
         </form>
     )
 }

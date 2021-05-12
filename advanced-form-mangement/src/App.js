@@ -12,7 +12,7 @@ const initialFormValues = {
   email: '',
   password: '',
   // CHECKBOX //
-  term: false,
+  terms: false,
 }
 
 const initialFormErrors = {
