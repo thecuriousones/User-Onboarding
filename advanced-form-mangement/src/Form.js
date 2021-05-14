@@ -27,30 +27,53 @@ export default function UserForm(props) {
 
                 {/* /// TEXT INPUTS /// */}
               <div className='labels'>
-                <label>Name&nbsp; 
-                    <input value={values.name} onChange={onChange} name="name" type="text"/>  
+                <label>Name 
+                    <input 
+                        value={values.name} 
+                        onChange={onChange} 
+                        name="name" 
+                        type="text" 
+                        placeholder="type here"
+                    />  
                 </label><br/> <br/>
 
-                <label>Email&nbsp;
-                    <input value={values.email} onChange={onChange} name="email" type="text"/>
+                <label>Email
+                    <input 
+                        value={values.email} 
+                        onChange={onChange} 
+                        name="email" type="text" 
+                        placeholder="type here"
+                    />
                 </label><br/> <br/>
 
-                <label>Password&nbsp;
-                    <input value={values.password} onChange={onChange} name="password" type="text"/>
+                <label>Password
+                    <input 
+                        value={values.password} 
+                        onChange={onChange} 
+                        name="password" 
+                        type="password" 
+                        placeholder="type here"
+                    />
                 </label><br/> <br/>
               </div>
             </div>
+
                 <h4>Please Select Checkbox</h4>
 
-                {/* // CHECKBOX // */}
+                {/* //// CHECKBOX //// */}
                 <label>Terms of Sevice
-                    <input value={values.terms} onChange={onChange} name="checkbox" type="checkbox"/>
-                </label><br/> 
+                     <input 
+                        value={values.terms} 
+                        onChange={onChange} 
+                        name="terms" type="checkbox"
+                     />
+                </label><br/>
 
-            <div className="form-group submit">
+                {/* //SUBMIT BUTTON */}
+            <div>
                 <button disabled={disabled}>SUBMIT</button>   
 
-                <div className="errors">
+                <div>
                     <div>{errors.name}</div>
                     <div>{errors.email}</div>
                     <div>{errors.password}</div>
